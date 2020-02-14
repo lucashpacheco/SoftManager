@@ -1,0 +1,2 @@
+# SoftManager
+Software de Gestao
