@@ -35,6 +35,7 @@
             this.r_operation_button = new System.Windows.Forms.Button();
             this.r_sell_button = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.employees_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // clients_button
@@ -45,6 +46,7 @@
             this.clients_button.TabIndex = 0;
             this.clients_button.Text = "Clientes";
             this.clients_button.UseVisualStyleBackColor = true;
+            this.clients_button.Click += new System.EventHandler(this.clients_button_Click);
             // 
             // storage_button
             // 
@@ -54,6 +56,7 @@
             this.storage_button.TabIndex = 1;
             this.storage_button.Text = "Estoque";
             this.storage_button.UseVisualStyleBackColor = true;
+            this.storage_button.Click += new System.EventHandler(this.storage_button_Click);
             // 
             // buy_button
             // 
@@ -72,6 +75,7 @@
             this.operation_button.TabIndex = 3;
             this.operation_button.Text = "Caixa";
             this.operation_button.UseVisualStyleBackColor = true;
+            this.operation_button.Click += new System.EventHandler(this.operation_button_Click);
             // 
             // r_operation_button
             // 
@@ -100,11 +104,22 @@
             this.button1.Text = "Contas";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // employees_button
+            // 
+            this.employees_button.Location = new System.Drawing.Point(202, 68);
+            this.employees_button.Name = "employees_button";
+            this.employees_button.Size = new System.Drawing.Size(88, 23);
+            this.employees_button.TabIndex = 7;
+            this.employees_button.Text = "Operadorees";
+            this.employees_button.UseVisualStyleBackColor = true;
+            this.employees_button.Click += new System.EventHandler(this.employees_button_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(401, 322);
+            this.Controls.Add(this.employees_button);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.r_sell_button);
             this.Controls.Add(this.r_operation_button);
@@ -128,6 +143,7 @@
         private System.Windows.Forms.Button r_operation_button;
         private System.Windows.Forms.Button r_sell_button;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button employees_button;
     }
 }
 
