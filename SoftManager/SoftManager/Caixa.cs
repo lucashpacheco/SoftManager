@@ -7,14 +7,63 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SoftManager.Models;
+using SoftManager.Repositories;
 
 namespace SoftManager
 {
     public partial class Caixa : Form
     {
+        private Register Register
+        {
+            get
+            {
+                return new Register()
+                {
+                    //id = string.IsNullOrEmpty(textID.Text) ? 0 : int.Parse(textID.Text),
+                    codigo = int.Parse(txtcodprod.Text),
+                    desconto = int.Parse(txtdiscount.Text),
+                    valorsaida = int.Parse(txtunityprice.Text),
+                    qtd = int.Parse(txtprodavailable.Text)
+                };
+            }
+        }
+
+        private List<TextBox> _textBoxes;
+
+       
+        private void ExibirDados()
+        {
+            try
+            {
+
+
+                //var registers = ProductRepository.GetRegisterById();
+
+                //dataGridView1.DataSource = registers;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro: {ex.Message}");
+            }
+        }
+
         public Caixa()
         {
             InitializeComponent();
+
+            _textBoxes = new List<TextBox>()
+            {
+                txtcodprod,
+                txtdiscount,
+                txtunityprice,
+                txtprodavailable,
+                //txtsenha,
+                //txtobs
+            };
+
+            //ExibirDados();
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -50,6 +99,16 @@ namespace SoftManager
         private void label22_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtgetcpf_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void entercpf_button_Click(object sender, EventArgs e)
+        {
+            txtgetcpf.Text = txtcpf.Text;
         }
     }
 }
