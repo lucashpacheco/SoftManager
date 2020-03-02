@@ -29,6 +29,21 @@ namespace SoftManager
             }
         }
 
+        private DadosCliente Read
+        {
+            get
+            {
+                return new DadosCliente()
+                {
+                    //id = string.IsNullOrEmpty(textID.Text) ? 0 : int.Parse(textID.Text),
+                    codigo = int.Parse(txtcodprod.Text),
+                    desconto = int.Parse(txtdiscount.Text),
+                    valorsaida = int.Parse(txtunityprice.Text),
+                    qtd = int.Parse(txtprodavailable.Text)
+                };
+            }
+        }
+
         private List<TextBox> _textBoxes;
 
        
@@ -37,10 +52,13 @@ namespace SoftManager
             try
             {
 
+                List<DadosCliente> produto = ProductRepository.GetRegisterById(Convert.ToInt32(txtcodprod.Text));
 
-                //var registers = ProductRepository.GetRegisterById();
 
-                //dataGridView1.DataSource = registers;
+                //txtcodprod.Text = dados
+                txtdiscount.Text = produto[0].desconto.ToString();
+                txtunityprice.Text = produto[0].valorsaida.ToString();
+                txtprodavailable.Text = produto[0].qtd.ToString();
 
             }
             catch (Exception ex)
@@ -109,6 +127,11 @@ namespace SoftManager
         private void entercpf_button_Click(object sender, EventArgs e)
         {
             txtgetcpf.Text = txtcpf.Text;
+        }
+
+        private void enter_Click(object sender, EventArgs e)
+        {
+            ExibirDados();
         }
     }
 }

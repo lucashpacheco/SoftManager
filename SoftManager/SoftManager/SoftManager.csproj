@@ -62,6 +62,7 @@
     <Compile Include="Estoque.Designer.cs">
       <DependentUpon>Estoque.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\DadosCliente.cs" />
     <Compile Include="Operadores.cs">
       <SubType>Form</SubType>
     </Compile>

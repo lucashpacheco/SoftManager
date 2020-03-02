@@ -1,10 +1,12 @@
 ﻿using SoftManager.Models;
 using Dapper;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
+using System.Web;
 
 namespace SoftManager.Repositories
 {
@@ -23,15 +25,45 @@ namespace SoftManager.Repositories
             }
         }
 
-        public static List<Register> GetRegisterById(int? codigo)
+        public static List<DadosCliente> GetRegisterById(int codigo)
         {
-            var query = "SELECT * FROM list_users WHERE codigo=codigo";
+            List<DadosCliente> produto = new List<DadosCliente>();
 
             using (var conn = new SqlConnection(_connString))
             {
-                var register = conn.Query<Register>(query, new { codigo = codigo }).ToList();
+                conn.Open();
 
-                return register;
+                using (SqlCommand cmd = new SqlCommand())
+
+                {
+                    StringBuilder sql = new StringBuilder();
+
+                    sql.Append("SELECT * FROM estoque WHERE codigo=");
+                    sql.Append(codigo);
+
+                    cmd.Connection = conn;
+                    cmd.CommandText = sql.ToString();
+                    
+
+                    SqlDataReader sqlDataReader = cmd.ExecuteReader();
+
+                    while (sqlDataReader.Read())
+                    {
+                        DadosCliente cliente = new DadosCliente();
+
+                        cliente.qtd = Convert.ToInt32(sqlDataReader["qtd"]);
+
+                        cliente.valorsaida = float.Parse(sqlDataReader["valorsaida"].ToString());
+
+                        cliente.desconto = float.Parse(sqlDataReader["desconto"].ToString());
+
+                        produto.Add(cliente);
+                      
+                    }      
+
+                }
+
+                return produto;
             }
         }
 

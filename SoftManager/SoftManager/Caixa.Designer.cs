@@ -49,6 +49,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtcpf = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -91,7 +92,7 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.enter = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -279,6 +280,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.enter);
             this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.label10);
@@ -299,6 +301,15 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(685, 130);
             this.panel3.TabIndex = 2;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(200, 21);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(64, 23);
+            this.button6.TabIndex = 22;
+            this.button6.Text = "BUSCAR";
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
@@ -682,14 +693,15 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "CAIXA FECHADO";
             // 
-            // button6
+            // enter
             // 
-            this.button6.Location = new System.Drawing.Point(200, 21);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(64, 23);
-            this.button6.TabIndex = 22;
-            this.button6.Text = "BUSCAR";
-            this.button6.UseVisualStyleBackColor = true;
+            this.enter.Location = new System.Drawing.Point(138, -1);
+            this.enter.Name = "enter";
+            this.enter.Size = new System.Drawing.Size(75, 23);
+            this.enter.TabIndex = 23;
+            this.enter.Text = "button3";
+            this.enter.UseVisualStyleBackColor = true;
+            this.enter.Click += new System.EventHandler(this.enter_Click);
             // 
             // Caixa
             // 
@@ -791,5 +803,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button enter;
     }
 }
