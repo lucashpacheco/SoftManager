@@ -17,7 +17,7 @@ namespace SoftManager.Models
         [DisplayName("nome")]
         public string nome { get; set; }
         [DisplayName("descricao")]
-        public float descricao { get; set; }
+        public string descricao { get; set; }
         [DisplayName("valorentrada")]
         public float valorentrada { get; set; }
         [DisplayName("valorsaida")]

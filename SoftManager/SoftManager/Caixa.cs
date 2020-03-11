@@ -31,16 +31,21 @@ namespace SoftManager
 
         private List<TextBox> _textBoxes;
 
-       
+
         private void ExibirDados()
         {
             try
             {
 
 
-                //var registers = ProductRepository.GetRegisterById();
 
-                //dataGridView1.DataSource = registers;
+                var registers = ProductRepository.GetRegisterById(123456);
+
+                txtdiscount.Text = registers[0].desconto.ToString();
+                txtunityprice.Text = registers[0].valorsaida.ToString();
+                txtprodavailable.Text = registers[0].qtd.ToString();
+
+
 
             }
             catch (Exception ex)
@@ -85,11 +90,19 @@ namespace SoftManager
         {
 
         }
-
-        private void textBox10_TextChanged(object sender, EventArgs e)
+        private void AllPriceInsert()
         {
+            double unityprice = Convert.ToDouble(txtunityprice.Text);
+            int qtdinsert = Convert.ToInt32(txtqtdinsert.Text);
+            
+            var allprice = qtdinsert * unityprice;
 
-        }
+            MessageBox.Show(Convert.ToString(allprice));
+
+            txtallprice.Text = Convert.ToString(qtdinsert * unityprice);
+
+
+         }
 
         private void textBox9_TextChanged(object sender, EventArgs e)
         {
@@ -109,6 +122,22 @@ namespace SoftManager
         private void entercpf_button_Click(object sender, EventArgs e)
         {
             txtgetcpf.Text = txtcpf.Text;
+        }
+
+        private void Caixa_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ExibirDados();
+        }
+
+        private void calculate_btn_Click(object sender, EventArgs e)
+        {
+            AllPriceInsert();
+
         }
     }
 }

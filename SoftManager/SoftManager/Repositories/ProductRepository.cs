@@ -25,7 +25,7 @@ namespace SoftManager.Repositories
 
         public static List<Register> GetRegisterById(int? codigo)
         {
-            var query = "SELECT * FROM list_users WHERE codigo=codigo";
+            var query = "SELECT * FROM estoque WHERE codigo=codigo";
 
             using (var conn = new SqlConnection(_connString))
             {

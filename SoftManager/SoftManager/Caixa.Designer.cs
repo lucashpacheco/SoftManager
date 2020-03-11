@@ -49,6 +49,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtcpf = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.calculate_btn = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -91,7 +93,6 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -279,6 +280,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.calculate_btn);
             this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.label10);
@@ -299,6 +301,26 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(685, 130);
             this.panel3.TabIndex = 2;
+            // 
+            // calculate_btn
+            // 
+            this.calculate_btn.Location = new System.Drawing.Point(568, 14);
+            this.calculate_btn.Name = "calculate_btn";
+            this.calculate_btn.Size = new System.Drawing.Size(97, 35);
+            this.calculate_btn.TabIndex = 23;
+            this.calculate_btn.Text = "CALCULAR";
+            this.calculate_btn.UseVisualStyleBackColor = true;
+            this.calculate_btn.Click += new System.EventHandler(this.calculate_btn_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(200, 21);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(64, 23);
+            this.button6.TabIndex = 22;
+            this.button6.Text = "BUSCAR";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label14
             // 
@@ -353,7 +375,6 @@
             this.txtqtdinsert.Name = "txtqtdinsert";
             this.txtqtdinsert.Size = new System.Drawing.Size(151, 20);
             this.txtqtdinsert.TabIndex = 17;
-            this.txtqtdinsert.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // txtdiscount
             // 
@@ -364,7 +385,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(568, 71);
+            this.button5.Location = new System.Drawing.Point(568, 86);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(97, 34);
             this.button5.TabIndex = 15;
@@ -373,7 +394,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(568, 32);
+            this.button4.Location = new System.Drawing.Point(568, 50);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 35);
             this.button4.TabIndex = 14;
@@ -682,15 +703,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "CAIXA FECHADO";
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(200, 21);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(64, 23);
-            this.button6.TabIndex = 22;
-            this.button6.Text = "BUSCAR";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // Caixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -706,6 +718,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Caixa";
             this.Text = "Caixa";
+            this.Load += new System.EventHandler(this.Caixa_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -791,5 +804,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button calculate_btn;
     }
 }
