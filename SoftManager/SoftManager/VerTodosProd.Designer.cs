@@ -31,7 +31,7 @@
             this.dgvAllProdView = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.insertfromallview_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllProdView)).BeginInit();
             this.SuspendLayout();
@@ -41,7 +41,8 @@
             this.dgvAllProdView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllProdView.Location = new System.Drawing.Point(12, 42);
             this.dgvAllProdView.Name = "dgvAllProdView";
-            this.dgvAllProdView.Size = new System.Drawing.Size(675, 253);
+            this.dgvAllProdView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAllProdView.Size = new System.Drawing.Size(526, 253);
             this.dgvAllProdView.TabIndex = 0;
             // 
             // textBox1
@@ -60,14 +61,15 @@
             this.button1.Text = "PESQUISAR";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // insertfromallview_btn
             // 
-            this.button2.Location = new System.Drawing.Point(554, 8);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "NSERIR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.insertfromallview_btn.Location = new System.Drawing.Point(405, 7);
+            this.insertfromallview_btn.Name = "insertfromallview_btn";
+            this.insertfromallview_btn.Size = new System.Drawing.Size(133, 23);
+            this.insertfromallview_btn.TabIndex = 3;
+            this.insertfromallview_btn.Text = "NSERIR";
+            this.insertfromallview_btn.UseVisualStyleBackColor = true;
+            this.insertfromallview_btn.Click += new System.EventHandler(this.insertfromallview_btn_Click);
             // 
             // label1
             // 
@@ -78,17 +80,17 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "PESQUISE POR NOME";
             // 
-            // Form1
+            // VerTodosProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 295);
+            this.ClientSize = new System.Drawing.Size(542, 295);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.insertfromallview_btn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dgvAllProdView);
-            this.Name = "Form1";
+            this.Name = "VerTodosProd";
             this.Text = "TODOS OS PRODUTOS";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllProdView)).EndInit();
@@ -102,7 +104,7 @@
         private System.Windows.Forms.DataGridView dgvAllProdView;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button insertfromallview_btn;
         private System.Windows.Forms.Label label1;
     }
 }

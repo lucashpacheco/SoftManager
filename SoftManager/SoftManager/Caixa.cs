@@ -56,6 +56,29 @@ namespace SoftManager
             }
         }
 
+        public void ExibirDadosDeTodos()
+        {
+            try
+            {
+                VerTodosProd resultado = new VerTodosProd();
+
+                int codigo = resultado.PassarDadosDeTodos();
+
+                var registers = ProductRepository.GetRegisterById(codigo);
+
+                txtdiscount.Text = registers[0].desconto.ToString();
+                txtunityprice.Text = registers[0].valorsaida.ToString();
+                txtprodavailable.Text = registers[0].qtd.ToString();
+
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro: {ex.Message}");
+            }
+        }
+
         public Caixa()
         {
             InitializeComponent();

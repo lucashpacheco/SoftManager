@@ -34,6 +34,18 @@ namespace SoftManager.Repositories
             }
         }
 
+        public static List<Register> GetRegisterFromAllView()
+        {
+            var query = "SELECT * FROM estoque";
+
+            using (var conn = new SqlConnection(_connString))
+            {
+                var register = conn.Query<Register>(query).ToList();
+
+                return register;
+            }
+        }
+
         public static List<Register> GetRegisterById(int? codigo)
         {
             var query = "SELECT * FROM estoque WHERE codigo=codigo";
