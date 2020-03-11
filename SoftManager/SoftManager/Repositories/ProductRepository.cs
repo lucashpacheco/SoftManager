@@ -23,12 +23,12 @@ namespace SoftManager.Repositories
             }
         }
 
-        public static List<Register> GetAllRegisterFilter()
+        public static List<RegisterFilter> GetAllRegisterFilter()
         {
             var query = "SELECT codigo,nome,descricao,valorsaida,qtd FROM estoque";
             using (var conn = new SqlConnection(_connString))
             {
-                var registers = conn.Query<Register>(query).ToList();
+                var registers = conn.Query<RegisterFilter>(query).ToList();
 
                 return registers;
             }

@@ -62,6 +62,7 @@
     <Compile Include="Estoque.Designer.cs">
       <DependentUpon>Estoque.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\RegisterFilter.cs" />
     <Compile Include="VerTodosProd.cs">
       <SubType>Form</SubType>
     </Compile>
