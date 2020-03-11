@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SoftManager.Models;
 using SoftManager.Repositories;
+using System.Threading;
+
 
 namespace SoftManager
 {
@@ -39,7 +41,7 @@ namespace SoftManager
 
 
 
-                var registers = ProductRepository.GetRegisterById(123456);
+                var registers = ProductRepository.GetRegisterById(int.Parse(txtcodprod.Text));
 
                 txtdiscount.Text = registers[0].desconto.ToString();
                 txtunityprice.Text = registers[0].valorsaida.ToString();
@@ -64,28 +66,11 @@ namespace SoftManager
                 txtdiscount,
                 txtunityprice,
                 txtprodavailable,
-                //txtsenha,
-                //txtobs
+             
             };
 
-            //ExibirDados();
         }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void textBox17_TextChanged(object sender, EventArgs e)
         {
 
@@ -94,7 +79,7 @@ namespace SoftManager
         {
             double unityprice = Convert.ToDouble(txtunityprice.Text);
             int qtdinsert = Convert.ToInt32(txtqtdinsert.Text);
-            
+
             var allprice = qtdinsert * unityprice;
 
             MessageBox.Show(Convert.ToString(allprice));
@@ -102,18 +87,7 @@ namespace SoftManager
             txtallprice.Text = Convert.ToString(qtdinsert * unityprice);
 
 
-         }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
         }
-
-        private void label22_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtgetcpf_Click(object sender, EventArgs e)
         {
 
@@ -137,6 +111,22 @@ namespace SoftManager
         private void calculate_btn_Click(object sender, EventArgs e)
         {
             AllPriceInsert();
+
+        }
+
+        private void go_allprod_btn_Click(object sender, EventArgs e)
+        {
+            Thread inallprod;
+
+            inallprod = new Thread(in_allprod);
+            inallprod.SetApartmentState(ApartmentState.STA);
+            inallprod.Start();
+
+        
+        }
+        private void in_allprod()
+        {
+            Application.Run(new VerTodosProd());
 
         }
     }

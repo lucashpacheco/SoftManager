@@ -93,6 +93,7 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.go_allprod_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -280,6 +281,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.go_allprod_btn);
             this.panel3.Controls.Add(this.calculate_btn);
             this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.label14);
@@ -330,7 +332,6 @@
             this.label14.Size = new System.Drawing.Size(78, 13);
             this.label14.TabIndex = 21;
             this.label14.Text = "EM ESTOQUE";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label10
             // 
@@ -349,7 +350,6 @@
             this.label13.Size = new System.Drawing.Size(78, 13);
             this.label13.TabIndex = 20;
             this.label13.Text = "QUANTIDADE";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label12
             // 
@@ -359,7 +359,6 @@
             this.label12.Size = new System.Drawing.Size(106, 13);
             this.label12.TabIndex = 19;
             this.label12.Text = "CODIGO PRODUTO";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // txtprodavailable
             // 
@@ -407,7 +406,6 @@
             this.txtcodprod.Name = "txtcodprod";
             this.txtcodprod.Size = new System.Drawing.Size(88, 20);
             this.txtcodprod.TabIndex = 13;
-            this.txtcodprod.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // label3
             // 
@@ -573,7 +571,6 @@
             this.label22.Size = new System.Drawing.Size(78, 13);
             this.label22.TabIndex = 10;
             this.label22.Text = "DESCONTO %";
-            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // txtqtdincart
             // 
@@ -703,6 +700,16 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "CAIXA FECHADO";
             // 
+            // go_allprod_btn
+            // 
+            this.go_allprod_btn.Location = new System.Drawing.Point(133, 1);
+            this.go_allprod_btn.Name = "go_allprod_btn";
+            this.go_allprod_btn.Size = new System.Drawing.Size(131, 20);
+            this.go_allprod_btn.TabIndex = 24;
+            this.go_allprod_btn.Text = "TODOS";
+            this.go_allprod_btn.UseVisualStyleBackColor = true;
+            this.go_allprod_btn.Click += new System.EventHandler(this.go_allprod_btn_Click);
+            // 
             // Caixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -805,5 +812,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button calculate_btn;
+        private System.Windows.Forms.Button go_allprod_btn;
     }
 }
