@@ -11,10 +11,13 @@ using SoftManager.Repositories;
 using SoftManager;
 
 
+
 namespace SoftManager
 {
     public partial class VerTodosProd : Form
     {
+        private object txtdiscount;
+
         public VerTodosProd()
         {
             InitializeComponent();
@@ -52,7 +55,7 @@ namespace SoftManager
                         if (row.IsNewRow) continue;
                         codigo = (int)row.Cells[0].Value;
 
-                        
+
 
                     }
 
@@ -61,22 +64,25 @@ namespace SoftManager
                 {
                     MessageBox.Show($"Erro: {ex.Message}");
                 }
-                
+
             }
             return codigo;
 
-          
+
 
         }
 
-        
+
         private void insertfromallview_btn_Click(object sender, EventArgs e)
         {
-            
-            Caixa resultado = new Caixa();
-            
-            resultado.ExibirDadosDeTodos();
-            PassarDadosDeTodos();
+
+            Caixa caixa = new Caixa();
+            int codigo = PassarDadosDeTodos();
+
+            caixa.Codigo = codigo;
+            caixa.Show();
+            //this.DialogResult = DialogResult.OK;
+
 
         }
 
@@ -84,5 +90,5 @@ namespace SoftManager
 
     }
 
-    
+
 }

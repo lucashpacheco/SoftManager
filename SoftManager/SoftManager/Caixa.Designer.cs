@@ -49,6 +49,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtcpf = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.go_allprod_btn = new System.Windows.Forms.Button();
             this.calculate_btn = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -93,7 +94,6 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.go_allprod_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -303,6 +303,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(685, 130);
             this.panel3.TabIndex = 2;
+            // 
+            // go_allprod_btn
+            // 
+            this.go_allprod_btn.Location = new System.Drawing.Point(133, 1);
+            this.go_allprod_btn.Name = "go_allprod_btn";
+            this.go_allprod_btn.Size = new System.Drawing.Size(131, 20);
+            this.go_allprod_btn.TabIndex = 24;
+            this.go_allprod_btn.Text = "TODOS";
+            this.go_allprod_btn.UseVisualStyleBackColor = true;
+            this.go_allprod_btn.Click += new System.EventHandler(this.go_allprod_btn_Click);
             // 
             // calculate_btn
             // 
@@ -700,16 +710,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "CAIXA FECHADO";
             // 
-            // go_allprod_btn
-            // 
-            this.go_allprod_btn.Location = new System.Drawing.Point(133, 1);
-            this.go_allprod_btn.Name = "go_allprod_btn";
-            this.go_allprod_btn.Size = new System.Drawing.Size(131, 20);
-            this.go_allprod_btn.TabIndex = 24;
-            this.go_allprod_btn.Text = "TODOS";
-            this.go_allprod_btn.UseVisualStyleBackColor = true;
-            this.go_allprod_btn.Click += new System.EventHandler(this.go_allprod_btn_Click);
-            // 
             // Caixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -763,13 +763,11 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtprodavailable;
         private System.Windows.Forms.TextBox txtqtdinsert;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox txtcodprod;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtunityprice;
         private System.Windows.Forms.TextBox txtallprice;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -784,7 +782,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtfinalprice;
-        private System.Windows.Forms.TextBox txtdiscount;
         private System.Windows.Forms.TextBox txttotalprice;
         private System.Windows.Forms.TextBox txtqtdincart;
         private System.Windows.Forms.Panel panel6;
@@ -813,5 +810,8 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button calculate_btn;
         private System.Windows.Forms.Button go_allprod_btn;
+        public System.Windows.Forms.TextBox txtdiscount;
+        public System.Windows.Forms.TextBox txtunityprice;
+        public System.Windows.Forms.TextBox txtprodavailable;
     }
 }

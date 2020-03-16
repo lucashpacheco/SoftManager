@@ -31,6 +31,8 @@ namespace SoftManager
             }
         }
 
+        public int Codigo { get; set; }
+
         private List<TextBox> _textBoxes;
 
 
@@ -56,20 +58,17 @@ namespace SoftManager
             }
         }
 
-        public void ExibirDadosDeTodos()
+        public void ExibirDadosDeTodos(int codigo)
         {
             try
             {
-                VerTodosProd resultado = new VerTodosProd();
-
-                int codigo = resultado.PassarDadosDeTodos();
 
                 var registers = ProductRepository.GetRegisterById(codigo);
+
 
                 txtdiscount.Text = registers[0].desconto.ToString();
                 txtunityprice.Text = registers[0].valorsaida.ToString();
                 txtprodavailable.Text = registers[0].qtd.ToString();
-
 
 
             }
@@ -123,12 +122,16 @@ namespace SoftManager
 
         private void Caixa_Load(object sender, EventArgs e)
         {
-
+            if (Codigo > 0)
+            {
+                ExibirDadosDeTodos(Codigo);
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             ExibirDados();
+          
         }
 
         private void calculate_btn_Click(object sender, EventArgs e)
@@ -139,13 +142,18 @@ namespace SoftManager
 
         private void go_allprod_btn_Click(object sender, EventArgs e)
         {
-            Thread inallprod;
+            //Thread inallprod;
 
-            inallprod = new Thread(in_allprod);
-            inallprod.SetApartmentState(ApartmentState.STA);
-            inallprod.Start();
+            //inallprod = new Thread(in_allprod);
+            //inallprod.SetApartmentState(ApartmentState.STA);
+            //inallprod.Start();
 
-        
+
+            VerTodosProd frm = new VerTodosProd();
+            this.Hide();
+            frm.ShowDialog();
+
+
         }
         private void in_allprod()
         {
